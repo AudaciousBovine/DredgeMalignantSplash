@@ -1,6 +1,6 @@
 <Project>
 	<PropertyGroup>
 		<DredgePath>C:\My Programs\Steam\steamapps\common\DREDGE</DredgePath>
-		<OutputPath>$(DredgePath)\Mods\AudaciousBovine.MalignantSplash</OutputPath>
+		<OutputPath>$(DredgePath)\Mods\AudaciousBovine.MalignantSplashes</OutputPath>
 	</PropertyGroup>
 </Project>

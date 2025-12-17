@@ -7,7 +7,7 @@ using Winch.Config;
 using UnityEngine.Localization.SmartFormat.Utilities;
 using Winch.Core;
 
-namespace MalignantSplash.Splash.Patches
+namespace MalignantSplashes.Splash.Patches
 {
     [HarmonyPatch(typeof(GridUI))]
     public static class Splash_Patch

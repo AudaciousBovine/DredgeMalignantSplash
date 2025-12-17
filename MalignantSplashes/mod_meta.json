@@ -1,0 +1,9 @@
+{
+	"Author": "AudaciousBovine",
+	"Name": "Malignant Splashes",
+	"ModGUID": "AudaciousBovine.MalignantSplashes",
+	"Version": "1.0.0",
+	"ModAssembly": "MalignantSplashes.dll",
+	"MinWinchVersion": "0.6.1",
+	"Entrypoint": "MalignantSplashes.Loader/Initialize"
+}

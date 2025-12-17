@@ -7,7 +7,7 @@ using Winch.Config;
 using UnityEngine.Localization.SmartFormat.Utilities;
 using Winch.Core;
 
-namespace MalignantSplash
+namespace MalignantSplashes
 {
     public class Loader
     {
@@ -15,7 +15,7 @@ namespace MalignantSplash
         public static void Initialize()
         {
             /// RUNS HARMONY PATCHES
-            new Harmony("com.AudaciousBovine.MalignantSplash").PatchAll(Assembly.GetExecutingAssembly());
+            new Harmony("com.AudaciousBovine.MalignantSplashes").PatchAll(Assembly.GetExecutingAssembly());
             /// Runs Game Loaded Method
             ApplicationEvents.Instance.OnGameLoaded += OnGameLoaded;
         }

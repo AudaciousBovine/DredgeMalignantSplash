@@ -1,6 +1,6 @@
 # Malignant Splashes
 ### Dark Splashes are more of a hazard now!
-![Malignant Splashes](/MalignantSplash.png)
+![Malignant Splashes](/MalignantSplashes.png)
 
 
 ## Features
