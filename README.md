@@ -1,12 +1,12 @@
 
-![Mod Title Art](/Images/MalignantSplashes.jpg)
+![Mod Title Art](/MalignantSplashes/Images/MalignantSplashes.jpg)
 ### Dark Splashes are more of a hazard now!
 
-![Mod Updates](/Images/DredgeUpdates.png)
+![Mod Updates](/MalignantSplashes/Images/DredgeUpdates.png)
 ### Release 1.0.0
 - Initial Release
 
-![Mod Description](/Images/DredgeDescription.png)
+![Mod Description](/MalignantSplashes/Images/DredgeDescription.png)
 Dark Splashes were an interesting addition when sailing through the ooze but were too easy to deal with, all you have to do is discard them making them negligible, I wanted to make them an actual irritating problem clogging up your ship and clinging malignantly to your hull requiring you to travel to a shipyard to remove them!
 
 ## Features
@@ -16,7 +16,7 @@ Dark Splashes were an interesting addition when sailing through the ooze but wer
 - Used in an Iron Rig recipe
 - Morrow Shipyard now buys Materials
 
-![Mod Example](/Images/DarkSplash.jpg)
+![Mod Example](/MalignantSplashes/Images/DarkSplash.jpg)
 
 ## Would Like To Add
 - Configuration File
