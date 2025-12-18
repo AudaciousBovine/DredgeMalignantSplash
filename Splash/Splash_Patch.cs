@@ -1,7 +1,4 @@
 ﻿using HarmonyLib;
-using MalignantSplashes;
-using UnityEngine.Rendering.Universal.Internal;
-using UnityEngine.UI;
 
 namespace MalignantSplashes.Splash.Patches
 {
