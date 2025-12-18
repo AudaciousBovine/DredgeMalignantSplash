@@ -5,5 +5,5 @@
 	"Version": "1.0.3",
 	"ModAssembly": "MalignantSplashes.dll",
 	"MinWinchVersion": "0.6.1",
-	"Entrypoint": "MalignantSplashes.Loader/Initialize"
+	"Entrypoint": "MalignantSplashes.Main/Initialize"
 }

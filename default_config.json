@@ -1,32 +1,44 @@
 {
-    "enableMod": {
-        "type": "toggle",
-        "title": "AudaciousBovine.MalignantSplashes.enableMod.title",
-        "tooltip": "AudaciousBovine.MalignantSplashes.enableMod.tooltip",
-        "value": true
+    "malignance": {
+		"type": "dropdown",
+		"title": "AudaciousBovine.MalignantSplashes.malignance.title",
+		"tooltip": "AudaciousBovine.MalignantSplashes.malignance.tooltip",
+		"options": [
+			"FREE",
+			"NONE",
+			"INSTALL"
+		],
+		"optionStrings": [
+			"AudaciousBovine.MalignantSplashes.malignance.option.FREE",
+			"AudaciousBovine.MalignantSplashes.malignance.option.NONE",
+			"AudaciousBovine.MalignantSplashes.malignance.option.INSTALL"
+		],
+		"value": "NONE"
     },
-    "unmovableSplashes": {
-        "type": "toggle",
-        "title": "AudaciousBovine.MalignantSplashes.unmovableSplashes.title",
-        "tooltip": "AudaciousBovine.MalignantSplashes.unmovableSplashes.tooltip",
-        "value": false
+
+    	"Separator": {
+		"type": "separator",
+		"title": "AudaciousBovine.MalignantSplashes.separator.title"
     },
-    "splashPanicMod": {
-        "type": "integer",
-        "title": "AudaciousBovine.MalignantSplashes.splashPanicMod.title",
-        "tooltip": "AudaciousBovine.MalignantSplashes.splashPanicMod.tooltip",
-        "value": 1
-    },
+
     "splashRemoveCost": {
         "type": "decimal",
         "title": "AudaciousBovine.MalignantSplashes.splashRemoveCost.title",
         "tooltip": "AudaciousBovine.MalignantSplashes.splashRemoveCost.tooltip",
         "value": 1
     },
-        "splashSellValue": {
+
+    "splashSellValue": {
         "type": "decimal",
         "title": "AudaciousBovine.MalignantSplashes.splashSellValue.title",
         "tooltip": "AudaciousBovine.MalignantSplashes.splashSellValue.tooltip",
         "value": 5
+    },
+
+    "splashPanicMod": {
+        "type": "integer",
+        "title": "AudaciousBovine.MalignantSplashes.splashPanicMod.title",
+        "tooltip": "AudaciousBovine.MalignantSplashes.splashPanicMod.tooltip",
+        "value": 1
     }
 }

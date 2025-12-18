@@ -6,9 +6,9 @@ using Winch.Config;
 
 namespace MalignantSplashes
 {
-    public class Loader
+    public class Main
     {
-        ModConfig Config => ModConfig.GetConfig();
+        public static ModConfig Config => ModConfig.GetConfig();
 
         /// This method is run by Winch to initialize your mod
         public static void Initialize()
