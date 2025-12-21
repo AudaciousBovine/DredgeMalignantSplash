@@ -1,48 +1,49 @@
 ﻿using HarmonyLib;
+using UnityEngine;
 
 namespace MalignantSplashes.Splash.Patches
 {
-    /// Harmony Patch that changes properties of an item when it is created in the grid UI
+    // Harmony Patch that changes properties of an item when it is created in the grid UI
     [HarmonyPatch(typeof(GridUI))]
     public static class Splash_Patch
     {
-        [HarmonyPrefix] /// patch to run code before the original CreateObject method
-        ///[HarmonyPostfix] /// patch to run code after the original CreateObject method
+        [HarmonyPrefix]
+        // Patches CreateObject method, this includes when the inventory is opened
         [HarmonyPatch("CreateObject")]
         public static void CreateObjectPrefix(GridUI __instance, SpatialItemInstance entry)
-        ///public static void CreateObjectPostfix(GridUI __instance, SpatialItemInstance entry)
         {
-            /// check if created item is Dark Splash
-            if (entry.id == "dark-splash")
-            {
-                /// Setting the item data to a variable for easier use
-                SpatialItemData dark_splash = entry.GetItemData<SpatialItemData>();
-                /// Makes sure the item data isnt empty
-                if (dark_splash != null)
-                {
-                    /// Changing item properties
-                    dark_splash.canBeDiscardedByPlayer = false; 
-                    dark_splash.itemType = ItemType.EQUIPMENT;
-                    dark_splash.itemSubtype = ItemSubtype.MATERIAL;
-                    dark_splash.canBeSoldByPlayer = true;
+            DockData currentDock = GameManager.Instance.Player.CurrentDock.dockData;
+            SpatialItemData itemData = entry.GetItemData<SpatialItemData>();
 
-                    /// Making Dark Splash Unmovable if the config option is enabled
+            if (itemData.id == "dark-splash")
+            {
+                /// Changing item properties
+                itemData.canBeDiscardedByPlayer = false;
+                itemData.canBeDiscardedDuringQuestPickup = false;                    
+                itemData.itemType = ItemType.EQUIPMENT;
+                itemData.canBeSoldByPlayer = true;
+
+                // Allow free movement when at the Iron Rig
+                if (currentDock.id == "dock.the-iron-rig")
+                {
+                    itemData.moveMode = MoveMode.FREE;
+                }
+                else
+                {
+                    // Change Dark Splash movement mode based on config setting
                     if (Main.Config.GetProperty<string>("malignance") == "NONE")
                     {
-                        dark_splash.moveMode = MoveMode.NONE;
+                        itemData.moveMode = MoveMode.NONE;
                     }
-                    /// Making the Dark Splash take an hour to move if the config option is enabled
                     else if (Main.Config.GetProperty<string>("malignance") == "INSTALL")
                     {
-                        dark_splash.moveMode = MoveMode.INSTALL;
+                        itemData.moveMode = MoveMode.INSTALL;
                     } 
-                    /// Making the Dark Splash freely movable if the config option is enabled
                     else if (Main.Config.GetProperty<string>("malignance") == "FREE")
                     {
-                        dark_splash.moveMode = MoveMode.FREE;
+                        itemData.moveMode = MoveMode.FREE;
                     }
-                    
-                }
+                 }
             }
         }
     }

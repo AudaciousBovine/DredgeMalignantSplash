@@ -1,14 +1,14 @@
 {
     "AudaciousBovine.MalignantSplashes.malignance.title": "Malignance",
-    "AudaciousBovine.MalignantSplashes.malignance.tooltip": "IMMOVABLE can only be transferred to and from storage, MALIGNANT takes an hour to move (BUG can only move one then must close and reopen inventory)",
+    "AudaciousBovine.MalignantSplashes.malignance.tooltip": "IMMOVABLE can only be transferred to and from storage, MALIGNANT takes an hour to move",
     "AudaciousBovine.MalignantSplashes.malignance.option.FREE": "MOVABLE",
 	"AudaciousBovine.MalignantSplashes.malignance.option.NONE": "IMMOVABLE",
 	"AudaciousBovine.MalignantSplashes.malignance.option.INSTALL": "MALIGNANT",
     "AudaciousBovine.MalignantSplashes.separator.title": "PLEASE RESTART THE GAME TO APPLY CHANGES",
-    "AudaciousBovine.MalignantSplashes.splashRemoveCost.title": "Removal Cost",
-    "AudaciousBovine.MalignantSplashes.splashRemoveCost.tooltip": "The cost to remove a Dark Splash from your hull.",
-    "AudaciousBovine.MalignantSplashes.splashSellValue.title": "(WIP) Sell Value",
-    "AudaciousBovine.MalignantSplashes.splashSellValue.tooltip": "(NOT IMPLEMENTED) The value when selling a Dark Splash to someone that cares to buy them.",
+    "AudaciousBovine.MalignantSplashes.splashRemoveValue.title": "Removal Value",
+    "AudaciousBovine.MalignantSplashes.splashRemoveValue.tooltip": "The value used when removing a Dark Splash from your hull. (It turns negative)",
+    "AudaciousBovine.MalignantSplashes.splashSellValue.title": "Sell Value",
+    "AudaciousBovine.MalignantSplashes.splashSellValue.tooltip": "The value when selling a Dark Splash to someone that cares to buy them.",
     "AudaciousBovine.MalignantSplashes.splashPanicMod.title": "(WIP) Panic Modifier",
     "AudaciousBovine.MalignantSplashes.splashPanicMod.tooltip": "(NOT IMPLEMENTED) Percentage of panic increase per Dark Splash clinging to the hull."
 

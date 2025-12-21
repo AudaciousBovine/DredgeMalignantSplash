@@ -13,7 +13,7 @@
 			"AudaciousBovine.MalignantSplashes.malignance.option.NONE",
 			"AudaciousBovine.MalignantSplashes.malignance.option.INSTALL"
 		],
-		"value": "NONE"
+		"value": "INSTALL"
     },
 
     	"Separator": {
@@ -21,10 +21,10 @@
 		"title": "AudaciousBovine.MalignantSplashes.separator.title"
     },
 
-    "splashRemoveCost": {
+    "splashRemoveValue": {
         "type": "decimal",
-        "title": "AudaciousBovine.MalignantSplashes.splashRemoveCost.title",
-        "tooltip": "AudaciousBovine.MalignantSplashes.splashRemoveCost.tooltip",
+        "title": "AudaciousBovine.MalignantSplashes.splashRemoveValue.title",
+        "tooltip": "AudaciousBovine.MalignantSplashes.splashRemoveValue.tooltip",
         "value": 1
     },
 
