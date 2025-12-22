@@ -46,5 +46,8 @@ I wanted to make them an actual _irritating_ problem clogging up your ship and _
 - :red_square:Extra panic rate per carried splash
 - :purple_square:Some sort of proximity effect to fish on the hull
 
+## Found on DredgeMods.com!
+https://dredgemods.com/mods/malignant_splashes/
+
 ## Can also be found on the Nexus! (It helps because you can leave comments there)
 https://www.nexusmods.com/dredge/mods/26
