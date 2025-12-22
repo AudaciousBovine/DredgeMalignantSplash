@@ -3,33 +3,29 @@ using UnityEngine;
 
 namespace MalignantSplashes.Splash.Patches
 {
-    // Harmony Patch that changes properties of an item when it is created in the grid UI
+    
+    // Harmony Patch that runs before or after the creation of an item in the grid UI
     [HarmonyPatch(typeof(GridUI))]
     public static class Splash_Patch
     {
-        [HarmonyPrefix]
+        [HarmonyPostfix]
         // Patches CreateObject method, this includes when the inventory is opened
         [HarmonyPatch("CreateObject")]
-        public static void CreateObjectPrefix(GridUI __instance, SpatialItemInstance entry)
+        public static void CreateObjectPostfix(GridUI __instance, SpatialItemInstance entry)
         {
-            DockData currentDock = GameManager.Instance.Player.CurrentDock.dockData;
-            SpatialItemData itemData = entry.GetItemData<SpatialItemData>();
-
-            if (itemData.id == "dark-splash")
+            if (entry.GetItemData<SpatialItemData>() != null)
             {
-                /// Changing item properties
-                itemData.canBeDiscardedByPlayer = false;
-                itemData.canBeDiscardedDuringQuestPickup = false;                    
-                itemData.itemType = ItemType.EQUIPMENT;
-                itemData.canBeSoldByPlayer = true;
+                SpatialItemData itemData = entry.GetItemData<SpatialItemData>();
 
-                // Allow free movement when at the Iron Rig
-                if (currentDock.id == "dock.the-iron-rig")
+                if (itemData.id == "dark-splash")
                 {
-                    itemData.moveMode = MoveMode.FREE;
-                }
-                else
-                {
+                    // Changing item properties
+                    itemData.canBeDiscardedByPlayer = false;
+                    itemData.canBeDiscardedDuringQuestPickup = false;                    
+                    itemData.itemType = ItemType.EQUIPMENT;
+                    //itemData.itemSubtype = ItemSubtype.GADGET;
+                    itemData.canBeSoldByPlayer = true;
+
                     // Change Dark Splash movement mode based on config setting
                     if (Main.Config.GetProperty<string>("malignance") == "NONE")
                     {
@@ -43,7 +39,18 @@ namespace MalignantSplashes.Splash.Patches
                     {
                         itemData.moveMode = MoveMode.FREE;
                     }
-                 }
+
+                    if (GameManager.Instance.Player.CurrentDock != null && entry.GetItemData<SpatialItemData>() != null)
+                    {
+                        DockData currentDock = GameManager.Instance.Player.CurrentDock.dockData;
+
+                        // Allow free movement when at the Iron Rig
+                        if (currentDock.id == "dock.the-iron-rig")
+                        {
+                            itemData.moveMode = MoveMode.FREE;
+                        }
+                    }
+                }
             }
         }
     }

@@ -10,35 +10,42 @@ namespace MalignantSplashes.Splash.Patches
     {
         
         [HarmonyPostfix]
-        public static void GetItemValue(ref decimal __result, SpatialItemInstance itemInstance, ItemManager.BuySellMode mode, float sellValueModifier = 1f)
+        public static void GetItemValuePostfix(ref decimal __result, SpatialItemInstance itemInstance, ItemManager.BuySellMode mode, float sellValueModifier = 1f)
         {
-            BaseDestination currentDestination = GameManager.Instance.UI.CurrentDestination;
-            SpatialItemData itemData = itemInstance.GetItemData<SpatialItemData>();
+            if (itemInstance.GetItemData<SpatialItemData>() != null)
+            {
+                SpatialItemData itemData = itemInstance.GetItemData<SpatialItemData>();
 
-            if (itemData.id == "dark-splash") 
-            { 
-                if (currentDestination.id == "destination.tir-undermarket")
+                if (GameManager.Instance.UI.CurrentDestination != null && itemData != null)
                 {
-                    itemData.value = Main.Config.GetProperty<decimal>("splashSellValue");
-                    itemData.moveMode = MoveMode.FREE;
-                    __result = itemData.value;
-                }
-                else
-                {
-                    itemData.value = Main.Config.GetProperty<decimal>("splashRemoveValue"); 
-                    __result = itemData.value * -1;
+                    BaseDestination currentDestination = GameManager.Instance.UI.CurrentDestination;
+                    
+                    if (itemData.id == "dark-splash") 
+                    { 
+                        if (currentDestination.id == "destination.tir-undermarket")
+                        {
+                            itemData.value = Main.Config.GetProperty<decimal>("splashSellValue");
+                            itemData.moveMode = MoveMode.FREE;
+                            __result = itemData.value;
+                        }
+                        else
+                        {
+                            itemData.value = Main.Config.GetProperty<decimal>("splashRemoveCost"); 
+                            __result = itemData.value * -1;
 
-                    if (Main.Config.GetProperty<string>("malignance") == "NONE")
-                    {
-                        itemData.moveMode = MoveMode.NONE;
-                    }
-                    else if (Main.Config.GetProperty<string>("malignance") == "INSTALL")
-                    {
-                        itemData.moveMode = MoveMode.INSTALL;
-                    } 
-                    else if (Main.Config.GetProperty<string>("malignance") == "FREE")
-                    {
-                        itemData.moveMode = MoveMode.FREE;
+                            if (Main.Config.GetProperty<string>("malignance") == "NONE")
+                            {
+                                itemData.moveMode = MoveMode.NONE;
+                            }
+                            else if (Main.Config.GetProperty<string>("malignance") == "INSTALL")
+                            {
+                                itemData.moveMode = MoveMode.INSTALL;
+                            } 
+                            else if (Main.Config.GetProperty<string>("malignance") == "FREE")
+                            {
+                                itemData.moveMode = MoveMode.FREE;
+                            }
+                        }
                     }
                 }
             }

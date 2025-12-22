@@ -21,10 +21,10 @@
 		"title": "AudaciousBovine.MalignantSplashes.separator.title"
     },
 
-    "splashRemoveValue": {
+    "splashRemoveCost": {
         "type": "decimal",
-        "title": "AudaciousBovine.MalignantSplashes.splashRemoveValue.title",
-        "tooltip": "AudaciousBovine.MalignantSplashes.splashRemoveValue.tooltip",
+        "title": "AudaciousBovine.MalignantSplashes.splashRemoveCost.title",
+        "tooltip": "AudaciousBovine.MalignantSplashes.splashRemoveCost.tooltip",
         "value": 50
     },
 
