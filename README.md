@@ -30,7 +30,7 @@
 **Dark Splashes** were an interesting addition when sailing through the **ooze** but were **too easy** to deal with, all you have to do is **discard** them making them **negligible**. 
 I wanted to make them an actual _irritating_ problem clogging up your ship and _clinging malignantly_ to your hull requiring you to travel to a **shipyard** to remove them!
 
-## Features
+![Mod Features](/Images/DredgeFeatures.png)
 - :red_square:Dark Splashes can no longer be discarded
 - :red_square:Dark Splashes take an hour to move on your hull (Configurable)
 - :red_square:Have to be properly cleaned and removed at a shipyard (Sell for negative value) (Configurable)
